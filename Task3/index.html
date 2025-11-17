@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bookshelf — Task3</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1><i class="fas fa-book"></i> Bookshelf</h1>
+      <p class="subtitle">Add, search, edit and remove books — served from Express</p>
+    </header>
+
+    <section class="controls">
+      <form id="addForm" class="add-form" aria-label="Add book">
+        <input id="title" placeholder="Title" required />
+        <input id="author" placeholder="Author" required />
+        <input id="year" placeholder="Year" type="number" min="0" />
+        <button type="submit" class="btn primary">Add Book</button>
+      </form>
+
+      <div class="search-row">
+        <input id="search" placeholder="Search title, author or year..." />
+        <button id="refresh" class="btn">Refresh</button>
+      </div>
+    </section>
+
+    <section class="list-section">
+      <div id="stats" class="stats">Loading…</div>
+      <ul id="booksList" class="books-list"></ul>
+      <div class="pagination">
+        <button id="prevPage" class="btn">Prev</button>
+        <span id="pageInfo">1</span>
+        <button id="nextPage" class="btn">Next</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

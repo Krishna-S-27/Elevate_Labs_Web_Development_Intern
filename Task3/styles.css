@@ -1,0 +1,72 @@
+:root{
+  --bg:#f4f7fb; --card:#fff; --accent:#667eea; --muted:#6c757d; --danger:#dc3545;
+  --radius:12px; --shadow:0 10px 30px rgba(17,24,39,0.06);
+  --glass: rgba(255,255,255,0.6);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background:linear-gradient(180deg,#eef2ff 0%,#f8fafc 100%);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:28px;
+  min-height:100vh;
+}
+.app{
+  max-width:980px;
+  margin:0 auto;
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.app-header{
+  padding:28px;
+  background:linear-gradient(90deg,var(--accent),#764ba2);
+  color:#fff;
+}
+.app-header h1{margin:0;font-size:1.6rem;display:flex;gap:10px;align-items:center}
+.subtitle{margin:6px 0 0;opacity:0.9}
+
+.controls{
+  padding:18px;
+  display:grid;gap:12px;
+}
+.add-form{display:flex;gap:10px;flex-wrap:wrap}
+.add-form input{
+  padding:10px 12px;border-radius:8px;border:1px solid #e6e9ef;background:#fff;flex:1;
+}
+.add-form input[type=number]{max-width:120px}
+.btn{
+  border:0;padding:10px 14px;border-radius:10px;cursor:pointer;background:#eef2ff;color:var(--accent);font-weight:600;
+}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#764ba2);color:#fff;box-shadow:0 6px 18px rgba(102,126,234,0.18)}
+.search-row{display:flex;gap:8px;padding-top:4px}
+.search-row input{flex:1;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
+
+.list-section{padding:14px 18px;}
+.stats{margin-bottom:10px;color:var(--muted);font-size:0.95rem}
+.books-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.book{
+  display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.6),#fff);
+  border:1px solid #f0f2f7;
+}
+.book .meta{flex:1}
+.book h3{margin:0;font-size:1rem}
+.book p{margin:4px 0 0;color:var(--muted);font-size:0.9rem}
+.book .actions{display:flex;gap:8px}
+.icon-btn{background:transparent;border:0;padding:6px;border-radius:8px;cursor:pointer;color:var(--muted)}
+.icon-btn:hover{background:#f3f6ff;color:var(--accent)}
+.icon-btn.danger:hover{background:#fff2f2;color:var(--danger);color:var(--danger)}
+
+.pagination{display:flex;gap:8px;align-items:center;justify-content:center;padding:14px}
+.toast{position:fixed;right:20px;bottom:20px;background:#111827;color:#fff;padding:10px 14px;border-radius:8px;opacity:0;transform:translateY(8px);transition:all .25s ease;z-index:40}
+.toast.show{opacity:1;transform:none}
+
+/* responsiveness */
+@media (max-width:700px){
+  .add-form input{flex-basis:100%}
+  .app{margin:16px}
+}

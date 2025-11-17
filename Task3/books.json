@@ -1,0 +1,23 @@
+[
+  {
+    "id": "5dde5d36-2d47-4292-91a8-35e4cc1410ef",
+    "title": "Can we be Stranger again",
+    "author": "Krishna Shalawadi",
+    "year": 2022,
+    "createdAt": "2025-11-17T14:18:48.397Z"
+  },
+  {
+    "id": "1",
+    "title": "1984",
+    "author": "George Orwell",
+    "year": 1949,
+    "createdAt": "2025-11-17T14:00:26.657Z"
+  },
+  {
+    "id": "2",
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "year": 2011,
+    "createdAt": "2025-11-17T14:00:26.658Z"
+  }
+]
