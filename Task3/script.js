@@ -1,4 +1,3 @@
-// ...existing code...
 const apiBase = '/books';
 
 let state = { page: 1, limit: 10, q: '' };
@@ -137,6 +136,4 @@ function escapeHtml(text){
   return text.replace(/[&<>"'`=\/]/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;",'/':'&#x2F;','`':'&#x60;','=':'&#x3D;'})[s]);
 }
 
-// initial load
 loadAndRender();
-// ...existing code...
