@@ -11,13 +11,13 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 const DATA_FILE = path.join(__dirname, "books.json");
 
-// simple file-based persistence
+
 async function loadBooks() {
   try {
     const data = await fs.readFile(DATA_FILE, "utf8");
     return JSON.parse(data);
   } catch (err) {
-    // if file missing or invalid, seed defaults
+   
     const seed = [
       {
         id: "1",
@@ -43,10 +43,10 @@ async function saveBooks(books) {
   await fs.writeFile(DATA_FILE, JSON.stringify(books, null, 2), "utf8");
 }
 
-// Serve static frontend
+
 app.use(express.static(__dirname));
 
-// GET /books - list with optional search, page, limit
+
 app.get("/books", async (req, res) => {
   try {
     const q = (req.query.q || "").toLowerCase();
@@ -79,7 +79,6 @@ app.get("/books", async (req, res) => {
   }
 });
 
-// GET /books/:id
 app.get("/books/:id", async (req, res) => {
   try {
     const books = await loadBooks();
@@ -91,7 +90,7 @@ app.get("/books/:id", async (req, res) => {
   }
 });
 
-// POST /books create
+
 app.post("/books", async (req, res) => {
   try {
     const { title, author, year } = req.body;
@@ -114,7 +113,6 @@ app.post("/books", async (req, res) => {
   }
 });
 
-// PUT /books/:id update
 app.put("/books/:id", async (req, res) => {
   try {
     const { title, author, year } = req.body;
@@ -142,7 +140,6 @@ app.put("/books/:id", async (req, res) => {
   }
 });
 
-// DELETE /books/:id
 app.delete("/books/:id", async (req, res) => {
   try {
     const books = await loadBooks();
@@ -156,15 +153,13 @@ app.delete("/books/:id", async (req, res) => {
   }
 });
 
-// Health endpoint
 app.get("/health", (req, res) => res.json({ status: "ok" }));
 
-// fallback to frontend
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// Start
 app.listen(PORT, () => {
   console.log(`Books API + frontend running on http://localhost:${PORT}`);
 });
+
